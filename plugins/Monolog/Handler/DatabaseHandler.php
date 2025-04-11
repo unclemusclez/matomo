@@ -18,7 +18,7 @@ use Piwik\Db;
  */
 class DatabaseHandler extends AbstractProcessingHandler
 {
-    protected function write(array $record): void
+    protected function write(array $record)
     {
         $sql = sprintf(
             'INSERT INTO %s (tag, timestamp, level, message) VALUES (?, ?, ?, ?)',
@@ -36,6 +36,5 @@ class DatabaseHandler extends AbstractProcessingHandler
         ));
 
         Db::enableQueryLog($queryLog);
-        return; // Ensure void return
     }
 }

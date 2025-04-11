@@ -20,7 +20,7 @@ use Piwik\Filechecks;
  */
 class FileHandler extends StreamHandler
 {
-    protected function write(array $record): void
+    protected function write(array $record)
     {
         try {
             parent::write($record);
@@ -31,6 +31,5 @@ class FileHandler extends StreamHandler
             $ex->setIsHtmlMessage();
             throw $ex;
         }
-        return; // Ensure void return
     }
 }

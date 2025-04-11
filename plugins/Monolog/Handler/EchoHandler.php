@@ -16,7 +16,7 @@ use Monolog\Handler\AbstractProcessingHandler;
  */
 class EchoHandler extends AbstractProcessingHandler
 {
-    protected function write(array $record): void
+    protected function write(array $record)
     {
         if (isset($record['formatted'])) {
             $message = $record['formatted'];
@@ -25,6 +25,5 @@ class EchoHandler extends AbstractProcessingHandler
         }
 
         echo $message . "\n";
-        return; // Ensure void return
     }
 }
