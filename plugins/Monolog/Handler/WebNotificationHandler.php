@@ -23,7 +23,7 @@ class WebNotificationHandler extends AbstractProcessingHandler
 {
     public const MAX_NOTIFICATION_MESSAGE_LENGTH = 512;
 
-    public function isHandling(array $record)
+    public function isHandling(array $record):void
     {
         if (!empty($record['context']['ignoreInScreenWriter'])) {
             return false;
