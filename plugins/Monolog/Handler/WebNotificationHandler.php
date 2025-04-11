@@ -65,6 +65,7 @@ class WebNotificationHandler extends AbstractProcessingHandler
             // Can happen if this handler is enabled in CLI
             // Silently ignore the error.
         }
+        return;
     }
 
     private function getLiteDebuggingInfo()
