@@ -32,7 +32,7 @@ class WebNotificationHandler extends AbstractProcessingHandler
         return parent::isHandling($record);
     }
 
-    protected function write(array $record)
+    protected function write(array $record):void 
     {
         switch ($record['level']) {
             case Logger::EMERGENCY:
