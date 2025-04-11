@@ -507,9 +507,10 @@ class ResetInvalidationsTest extends ConsoleCommandTestCase
             self::$captureHandler = new class extends AbstractProcessingHandler {
                 public $messages = [];
 
-                protected function write(array $record)
+                protected function write(array $record): void
                 {
                     $this->messages[] = (string)$record['formatted'];
+                    return; // Ensure void return
                 }
             };
         }
